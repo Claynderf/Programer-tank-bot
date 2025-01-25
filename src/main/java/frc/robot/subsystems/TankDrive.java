@@ -32,6 +32,10 @@ public class TankDrive extends SubsystemBase {
         m_rightback.setInverted(true);
         m_rightback.follow(m_rightfront);
         m_leftback.follow(m_leftfront);
+        m_rightfront.setSafetyEnabled(true);
+        m_rightback.setSafetyEnabled(true);
+        m_leftback.setSafetyEnabled(true);
+        m_leftfront.setSafetyEnabled(true);
         
     
         m_tankDrive = new DifferentialDrive(m_leftfront, m_rightfront);

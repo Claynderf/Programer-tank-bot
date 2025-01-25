@@ -5,6 +5,7 @@
 package frc.robot;
 
 
+import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.Constants.OperatorConstants;
@@ -33,7 +34,7 @@ public class RobotContainer {
     configureBindings();
   }
 public void teleopPeriodic() {
-  m_tankdrive.drive(-m_driverController.getLeftY(), -m_driverController.getRightY());
+ // m_tankdrive.drive(-m_driverController.getLeftY(), -m_driverController.getRightY());
   
     
 }
@@ -47,8 +48,12 @@ public void teleopPeriodic() {
    * joysticks}.
    */
   private void configureBindings() {
-   
-
+   m_tankdrive.setDefaultCommand(
+    new RunCommand(
+      () ->
+    m_tankdrive.drive(
+      -m_driverController.getLeftY(), -m_driverController.getRightY() ),
+   m_tankdrive));
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.
     
