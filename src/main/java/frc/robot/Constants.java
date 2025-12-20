@@ -23,6 +23,6 @@ public final class Constants {
     public static final int krightbackID = 3;
   }
   public static class SpeedConstants {
-    public static final int kspeedfactorID = 2;
+    public static final int kspeedfactorID = 4;
   }
 }
