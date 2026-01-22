@@ -22,7 +22,6 @@ import frc.robot.subsystems.TankDrive;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  //private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
   private final CommandXboxController m_driverController =
@@ -35,8 +34,6 @@ public class RobotContainer {
     configureBindings();
   }
 public void teleopPeriodic() {
- // m_tankdrive.drive(-m_driverController.getLeftY(), -m_driverController.getRightY());
-  
     
 }
   /**
@@ -57,15 +54,18 @@ public void teleopPeriodic() {
    m_tankdrive));
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.
+    m_tankdrive.setapriltagCommand(m_driverController.b().whileTrue(
     
-  }
 
+    ));
+  }
+ 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
    *
    * @return the command to run in autonomous
    */
-  //public Command getAutonomousCommand() {
+
     // An example command will be run in autonomous
  
   //}
