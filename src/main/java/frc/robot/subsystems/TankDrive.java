@@ -22,7 +22,7 @@ public class TankDrive extends SubsystemBase {
     private final WPI_VictorSPX m_rightLeader = new  WPI_VictorSPX(DriveConstants.krightfrontID);
   private final WPI_VictorSPX m_rightFollower = new WPI_VictorSPX(DriveConstants.krightbackID);
   private final Field2d Field2d = new Field2d();
-  private static NetworkTable limelight = NetworkTableInstance.getDefault().getTable("rvfrc");
+  private static final NetworkTable limelight = NetworkTableInstance.getDefault().getTable("rvfrc");
         
 
 
